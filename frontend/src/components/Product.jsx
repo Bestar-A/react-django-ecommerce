@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Card } from "react-bootstrap"
+import Rating from "./Rating"
 
 const Product = ({product}) => {
     return (
@@ -15,7 +16,7 @@ const Product = ({product}) => {
                 </a>
                 <Card.Text as="div">
                     <div className="my-3">
-                        {product.rating} from {product.numReviews} reviews
+                        <Rating value={product.rating} text={product.numReviews} />
                     </div>
                 </Card.Text>
 
