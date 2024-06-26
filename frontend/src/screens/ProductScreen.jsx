@@ -1,8 +1,6 @@
 import { Link, useParams } from "react-router-dom"
 import { Badge, Button, Card, Col, Image, ListGroup, Row } from "react-bootstrap"
 import Rating from "../components/Rating"
-import { useEffect, useState } from "react"
-import axios from "axios"
 import { useGetProductByIdQuery } from "../store/slices/productsApiSlice"
 
 const ProductScreen = () => {
