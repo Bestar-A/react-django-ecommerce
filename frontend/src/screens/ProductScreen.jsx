@@ -51,14 +51,14 @@ const ProductScreen = () => {
                                 <Row>
                                     <Col>Status:</Col>
                                     <Col>
-                                        <Badge className={`p-2 px-3 ${product.countInStock > 0 ? 'bg-success' : 'bg-danger'}`}>
+                                        <Badge className={`rounded-pill p-2 px-3 ${product.countInStock > 0 ? 'bg-success' : 'bg-danger'}`}>
                                             {product.countInStock > 0 ? 'In Stock' : 'Out of Stock'}
                                         </Badge>
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
                             <ListGroup.Item>
-                                <Button className="btn btn-block w-100" variant="success"
+                                <Button className="btn btn-block w-100" variant="dark"
                                     disabled={product.countInStock <= 0}>Add to Cart</Button>
                             </ListGroup.Item>
                         </ListGroup>
