@@ -4,15 +4,19 @@ import Rating from "../components/Rating"
 import { useGetProductByIdQuery } from "../store/slices/productsApiSlice"
 import Message from "../components/Message"
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { addToCart } from "../store/slices/cartSlice"
 
 const ProductScreen = () => {
     const [qty, setQty] = useState(1)
     const {id} = useParams()
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const {data: product, isLoading, error} = useGetProductByIdQuery(id)
 
     const addToCartHandler = () => {
-        navigate(`/cart/${id}?qty=${qty}`)
+        dispatch(addToCart({...product, qty}))
+        navigate('/cart')
     }
 
     return (
@@ -68,7 +72,7 @@ const ProductScreen = () => {
                                             <Col className="my-1">
                                                 <Form.Control as='select'
                                                     value={qty}
-                                                    onChange={(e) => setQty(e.target.value)}
+                                                    onChange={(e) => setQty(Number(e.target.value))}
                                                 >
                                                     {[...Array(product.countInStock).keys()].map(x => (
                                                         <option key={x + 1} value={x + 1}>
