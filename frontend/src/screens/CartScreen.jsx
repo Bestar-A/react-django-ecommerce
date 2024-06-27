@@ -3,12 +3,16 @@ import { Button, Col, Form, Image, ListGroup, Row } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import Message from "../components/Message"
 import { Link, useNavigate } from "react-router-dom"
-import { addToCart, removeFromCart } from "../store/slices/cartSlice"
+import { addToCart } from "../store/slices/cartSlice"
 
 const CartScreen = () => {
     const { cartItems } = useSelector(state => state.cart)
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const removeFromCartHandler = (item) => {
+        console.log(item)
+    }
 
     const checkoutHandler = () => {
         navigate('/login?redirect=checkout')
@@ -50,7 +54,7 @@ const CartScreen = () => {
                                     </Col>
                                     <Col md={1}>
                                         <Button type="button" variant="light"
-                                            onClick={() => dispatch(removeFromCart(item._id))}>
+                                            onClick={() => removeFromCartHandler(item)}>
                                             <BiTrash />
                                         </Button>
                                     </Col>
