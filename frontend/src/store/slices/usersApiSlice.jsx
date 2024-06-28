@@ -25,8 +25,30 @@ export const usersSlice = apiSlice.injectEndpoints({
                 body: data
             }),
             invalidatesTags: ['Users']
+        }),
+        getProfile: builder.query({
+            query: (data) => ({
+                url: USERS_URL + "/profile",
+                headers: {
+                    Authorization: `Bearer ${data.access}`
+                }
+            }),
+            providesTags: ['Users']
+        }),
+        updateProfile: builder.mutation({
+            query: (data) => ({
+                url: USERS_URL + '/profile/update',
+                method: 'POST',
+                headers: {
+                    Authorization: `Bearer ${data.access}`
+                },
+                body: data
+            }),
+            invalidatesTags: ["Users"]
         })
     })
 })
 
-export const { useLoginUserMutation, useGetUsersQuery, useRegisterUserMutation } = usersSlice
+export const { useLoginUserMutation, useGetUsersQuery, useRegisterUserMutation,
+    useGetProfileQuery, useUpdateProfileMutation
+ } = usersSlice

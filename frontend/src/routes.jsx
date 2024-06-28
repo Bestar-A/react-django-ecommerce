@@ -5,6 +5,7 @@ import App from "./App";
 import CartScreen from "./screens/CartScreen";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
+import ProfileScreen from "./screens/ProfileScreen";
 
 const routes = createBrowserRouter (
     createRoutesFromElements(
@@ -14,6 +15,7 @@ const routes = createBrowserRouter (
             <Route path="/cart" element={<CartScreen />} />
             <Route path="/login" element={<LoginScreen />} />
             <Route path="/register" element={<RegisterScreen />} />
+            <Route path="/profile" element={<ProfileScreen />} />
         </Route>
     )
 )

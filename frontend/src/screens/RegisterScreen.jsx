@@ -66,7 +66,7 @@ const RegisterScreen = () => {
                     <Form.Control type="password" value={confirmPassword} placeholder="Enter Password Again"
                         onChange={(e) => setConfirmPassword(e.target.value)}></Form.Control>
                 </Form.Group>
-                <Button type="submit" variant="success" className="ms-auto px-4 fs-5 py-1 gap-2 d-flex align-items-center">
+                <Button type="submit" variant="dark" className="ms-auto px-4 fs-5 py-1 gap-2 d-flex align-items-center">
                     {isLoading && <Spinner size="sm" />}
                     Register
                 </Button>

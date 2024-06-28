@@ -11,6 +11,7 @@ const Header = () => {
 
     const logoutHandler = () => {
         dispatch(logout())
+
     }
 
     return (
