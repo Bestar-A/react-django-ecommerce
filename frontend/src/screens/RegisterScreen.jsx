@@ -3,7 +3,7 @@ import FormContainer from "../components/FormContainer"
 import { Button, Col, Form, Row, Spinner } from "react-bootstrap"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useRegisterUserMutation } from "../store/slices/usersApiSlice"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import Message from "../components/Message"
 
 const RegisterScreen = () => {
