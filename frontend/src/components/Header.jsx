@@ -1,3 +1,5 @@
+import { BiUserCircle } from "react-icons/bi"; 
+import { AiOutlineShoppingCart } from "react-icons/ai"; 
 import  { Container, Nav, Navbar } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
@@ -14,12 +16,18 @@ const Header = () => {
                     <Nav className='ms-auto'>
                         <LinkContainer to='/cart'>
                             <Nav.Link>
-                                Cart
+                                <div className="d-flex align-items-center gap-1 text-white">
+                                    <AiOutlineShoppingCart />
+                                    Cart
+                                </div>
                             </Nav.Link>
                         </LinkContainer>
                         <LinkContainer to='/login'>
                             <Nav.Link>
-                                Login
+                                <div className="d-flex align-items-center gap-1 text-white">
+                                    <BiUserCircle />
+                                    Login
+                                </div>
                             </Nav.Link>
                         </LinkContainer>
                     </Nav>
