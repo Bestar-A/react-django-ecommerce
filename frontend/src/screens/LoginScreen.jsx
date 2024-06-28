@@ -6,7 +6,6 @@ import { useLoginUserMutation } from "../store/slices/usersApiSlice"
 import { useDispatch, useSelector } from "react-redux"
 import { login } from "../store/slices/authSlice"
 import Message from "../components/Message"
-import Loader from "../components/Loader"
 
 const LoginScreen = () => {
     const [email, setEmail] = useState('')
