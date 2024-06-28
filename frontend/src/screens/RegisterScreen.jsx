@@ -35,8 +35,10 @@ const RegisterScreen = () => {
         if(password != confirmPassword) {
             setMessage('Passwords do not match')
         } else {
-            const {data} = await registerApi({name, email, password})
-            dispatch(login({...data}))
+            const data = await registerApi({name, email, password}).unwrap()
+            console.log(data)
+            navigate('/login')
+            // dispatch(login({...data}))
         }
     }
     

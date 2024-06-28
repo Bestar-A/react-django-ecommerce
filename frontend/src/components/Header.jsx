@@ -4,14 +4,16 @@ import  { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/slices/authSlice";
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
     const { userInfo } = useSelector(state => state.auth)
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     const logoutHandler = () => {
         dispatch(logout())
-
+        navigate('/')
     }
 
     return (
