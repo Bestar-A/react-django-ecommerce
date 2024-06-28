@@ -4,7 +4,6 @@ import { Button, Col, Form, Row, Spinner } from "react-bootstrap"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useRegisterUserMutation } from "../store/slices/usersApiSlice"
 import { useDispatch, useSelector } from "react-redux"
-import { login } from "../store/slices/authSlice"
 import Message from "../components/Message"
 
 const RegisterScreen = () => {
@@ -14,7 +13,6 @@ const RegisterScreen = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState(null)
 
-    const dispatch = useDispatch()
     const navigate = useNavigate()
     const {userInfo} = useSelector(state => state.auth)
 
@@ -35,10 +33,8 @@ const RegisterScreen = () => {
         if(password != confirmPassword) {
             setMessage('Passwords do not match')
         } else {
-            const data = await registerApi({name, email, password}).unwrap()
-            console.log(data)
+            await registerApi({name, email, password}).unwrap()
             navigate('/login')
-            // dispatch(login({...data}))
         }
     }
     
