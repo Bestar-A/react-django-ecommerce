@@ -17,8 +17,16 @@ export const usersSlice = apiSlice.injectEndpoints({
                 body: data
             }),
             invalidatesTags: ['Users']
+        }),
+        registerUser: builder.mutation({
+            query: (data) => ({
+                url: USERS_URL + "/register",
+                method: 'POST',
+                body: data
+            }),
+            invalidatesTags: ['Users']
         })
     })
 })
 
-export const { useLoginUserMutation, useGetUsersQuery } = usersSlice
+export const { useLoginUserMutation, useGetUsersQuery, useRegisterUserMutation } = usersSlice
